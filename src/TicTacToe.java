@@ -43,13 +43,14 @@ public class TicTacToe {
         do {
             x = scan.nextInt() - 1;
             y = scan.nextInt() - 1;
+            System.out.println("----");
         } while (!checkMx(x, y));
-        if (matrix[x][y] == empty)
+//        if (matrix[x][y] == empty)
             matrix[x][y] = X;
-        else {
-            System.out.println("Wrong move. Please try again");
-            human();
-        }
+//        else {
+//            System.out.println("Wrong move. Please try again");
+//            human();
+//        }
     }
 
     void comp() {
@@ -60,10 +61,10 @@ public class TicTacToe {
         } while (!checkMx(x, y));
         if (matrix[x][y] == empty)
             matrix[x][y] = O;
-        else {
-            System.out.println("Wrong move.Comp try again");
-            comp();
-        }
+//        else {
+//            System.out.println("Wrong move.Comp try again");
+//            comp();
+//        }
     }
 
     void human2() {
@@ -72,17 +73,17 @@ public class TicTacToe {
             x = scan.nextInt() - 1;
             y = scan.nextInt() - 1;
         } while (!checkMx(x, y));
-        if (matrix[x][y] == empty)
+//        if (matrix[x][y] == empty)
             matrix[x][y] = O;
-        else {
-            System.out.println("Wrong move Human2. Please try again");
-            human2();
-        }
+//        else {
+//            System.out.println("Wrong move Human2. Please try again");
+//            human2();
+//        }
     }
 
     boolean checkMx(int x, int y) {
         if (x < 0 || y < 0 || x >= 3 || y >= 3) return false;
-        return empty == matrix[y][x];
+        return empty == matrix[x][y];
     }
 
     boolean winner(char type) {
@@ -110,6 +111,7 @@ public class TicTacToe {
 
     void startGame() {
         initMatrix();
+        printMx();
         while (true) {
             System.out.println("First gamer`s turn");
             human();
@@ -124,7 +126,7 @@ public class TicTacToe {
             printMx();
             System.out.println("Second gamer`s turn");
             //You can replace to human2
-            comp();
+            human2();
             printMx();
             if (winner(O)) {
                 System.out.println("Second gamer win!");
