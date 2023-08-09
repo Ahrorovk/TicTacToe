@@ -38,7 +38,7 @@ public class TicTacToe {
         }
     }
 
-    void human() {
+    void human(String position) {
         int x, y;
         do {
             x = scan.nextInt() - 1;
@@ -52,15 +52,6 @@ public class TicTacToe {
         do {
             x = comp.nextInt(3);
             y = comp.nextInt(3);
-        } while (!checkMx(x, y));
-        matrix[x][y] = O;
-    }
-
-    void human2() {
-        int x, y;
-        do {
-            x = scan.nextInt() - 1;
-            y = scan.nextInt() - 1;
         } while (!checkMx(x, y));
         matrix[x][y] = O;
     }
@@ -98,7 +89,7 @@ public class TicTacToe {
         printMx();
         while (true) {
             System.out.println("First gamer`s turn");
-            human();
+            human(String.valueOf(X));
             if (winner(X)) {
                 System.out.println("First gamer win! ");
                 break;
@@ -110,7 +101,7 @@ public class TicTacToe {
             printMx();
             System.out.println("Second gamer`s turn");
             //You can replace to human2
-            human2();
+            human(String.valueOf(O));
             printMx();
             if (winner(O)) {
                 System.out.println("Second gamer win!");
