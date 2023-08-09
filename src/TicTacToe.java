@@ -68,12 +68,10 @@ public class TicTacToe {
                     (matrix[0][i] == type && matrix[1][i] == type &&
                             matrix[2][i] == type))
                 return true;
-        if ((matrix[0][0] == type && matrix[1][1] == type &&
+        return (matrix[0][0] == type && matrix[1][1] == type &&
                 matrix[2][2] == type) ||
                 (matrix[2][0] == type && matrix[1][1] == type &&
-                        matrix[0][2] == type))
-            return true;
-        return false;
+                        matrix[0][2] == type);
     }
 
     boolean isNotWinners() {
